@@ -1,0 +1,46 @@
+<?php
+
+namespace App\Http\Livewire\Admin\Department;
+
+use App\Models\department;
+use Livewire\Component;
+use Livewire\WithFileUploads;
+
+class Update extends Component
+{
+    use WithFileUploads;
+
+    public $department;
+
+
+    protected $rules = [];
+
+    public function mount(Department $department)
+    {
+        $this->department = $department;
+    }
+
+    public function updated($input)
+    {
+        $this->validateOnly($input);
+    }
+
+    public function update()
+    {
+        if ($this->getRules())
+            $this->validate();
+
+        $this->dispatchBrowserEvent('show-message', ['type' => 'success', 'message' => __('UpdatedMessage', ['name' => __('Department')])]);
+
+        $this->department->update([
+            'user_id' => auth()->id(),
+        ]);
+    }
+
+    public function render()
+    {
+        return view('livewire.admin.department.update', [
+            'department' => $this->department
+        ])->layout('admin::layouts.app', ['title' => __('UpdateTitle', ['name' => __('Department')])]);
+    }
+}
