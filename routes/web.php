@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 // use this to authenticate user 1 and delete after 
 
-Auth::loginUsingId(2);
+// Auth::loginUsingId(2);
 
 
 // registered routes 
@@ -31,6 +31,6 @@ Route::get('/', function () {
 
 Route::get('/dashboard', function () {
     return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+})->middleware(['auth', 'accessrole'])->name('dashboard');
 
 require __DIR__ . '/auth.php';

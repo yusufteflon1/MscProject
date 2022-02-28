@@ -24,7 +24,7 @@ class CreateStaffTable extends Migration
             $table->timestamps();
             $table->unsignedBigInteger('department');
 
-            $table->foreign('department')->references('department_id')->on('departments');
+            $table->foreign('department')->references('id')->on('department');
         });
     }
 

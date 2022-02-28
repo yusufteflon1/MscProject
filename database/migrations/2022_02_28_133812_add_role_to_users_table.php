@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateDeptsTable extends Migration
+class AddRoleToUsersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,8 @@ class CreateDeptsTable extends Migration
      */
     public function up()
     {
-        Schema::create('depts', function (Blueprint $table) {
-            $table->id('dept_id');
-            $table->timestamps();
-            $table->string('dept_name');
+        Schema::table('users', function (Blueprint $table) {
+            $table->string('role')->default('user')->after('id');
         });
     }
 
@@ -27,6 +25,8 @@ class CreateDeptsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('depts');
+        Schema::table('users', function (Blueprint $table) {
+            //
+        });
     }
 }

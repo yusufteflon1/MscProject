@@ -28,6 +28,7 @@
 
 
   <x-guest-layout>
-    <livewire:dashtest-page>
-    </livewire:dashtest-page> 
-</x-guest-layout>
+    <livewire:dashtest>
+      
+    </livewire:dashtest> 
+  </x-guest-layout>
