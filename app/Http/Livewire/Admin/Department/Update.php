@@ -2,7 +2,7 @@
 
 namespace App\Http\Livewire\Admin\Department;
 
-use App\Models\department;
+use App\Models\Department;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 
@@ -12,12 +12,14 @@ class Update extends Component
 
     public $department;
 
+    
+    protected $rules = [
+        
+    ];
 
-    protected $rules = [];
-
-    public function mount(Department $department)
-    {
+    public function mount(Department $department){
         $this->department = $department;
+        
     }
 
     public function updated($input)
@@ -27,11 +29,11 @@ class Update extends Component
 
     public function update()
     {
-        if ($this->getRules())
+        if($this->getRules())
             $this->validate();
 
-        $this->dispatchBrowserEvent('show-message', ['type' => 'success', 'message' => __('UpdatedMessage', ['name' => __('Department')])]);
-
+        $this->dispatchBrowserEvent('show-message', ['type' => 'success', 'message' => __('UpdatedMessage', ['name' => __('Department') ]) ]);
+        
         $this->department->update([
             'user_id' => auth()->id(),
         ]);
@@ -41,6 +43,6 @@ class Update extends Component
     {
         return view('livewire.admin.department.update', [
             'department' => $this->department
-        ])->layout('admin::layouts.app', ['title' => __('UpdateTitle', ['name' => __('Department')])]);
+        ])->layout('admin::layouts.app', ['title' => __('UpdateTitle', ['name' => __('Department') ])]);
     }
 }

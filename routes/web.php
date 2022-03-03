@@ -1,6 +1,6 @@
 <?php
 
-use Illuminate\Support\Facades\Auth;
+use Illuminate\Routing\RouteGroup;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,24 +13,44 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-// use this to authenticate user 1 and delete after 
 
-// Auth::loginUsingId(2);
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+// Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+//     return view('dashboard');
+// })->name('dashboard');
 
 
-// registered routes 
+// Route::middleware(['auth:sanctum', 'verified'])->get('/', function () {
+//     return view('welcome');
+// })->name('welcome');
+
+Route::group(['middleware' => [
+    'auth:sanctum',
+    'verified'
+]], function () {
 
 
-Route::get('/test', function () {
-    return view('test');
+    Route::get(
+        '/dashboard',
+        function () {
+            return view('dashboard');
+        }
+    )->name('dashboard');
+
+    Route::get(
+        '/',
+        function () {
+            return view('welcome');
+        }
+    )->name('welcome');
+
+    Route::get(
+        '/clients',
+        function () {
+            return view('admin.clients');
+        }
+    )->name('clients');
 });
-
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'accessrole'])->name('dashboard');
-
-require __DIR__ . '/auth.php';
