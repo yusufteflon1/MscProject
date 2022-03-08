@@ -12,6 +12,12 @@ class client extends Model
     public $first_name;
     public $title;
 
+
+    public function mount(client $first_name)
+    {
+
+        $this->$first_name = $first_name;
+    }
     public function approvals()
     {
         return $this->hasMany('App\Models\approvals');

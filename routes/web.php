@@ -43,7 +43,7 @@ Route::group(['middleware' => [
     Route::get(
         '/dashboard',
         function () {
-            return view('dashboard');
+            return view('welcome');
         }
     )->name('dashboard');
 
