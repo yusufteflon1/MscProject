@@ -7,14 +7,28 @@ use App\Models\client;
 
 class clients extends Component
 {
+    // public $clients;
+
+    // protected $fillable = [];
+
+    // public function mount()
+    // {
+    //     $this->clients = clients::all();
+    // }
+
     public $clients;
+    public $first_name;
+    public $title;
 
-    protected $fillable = [];
 
-    public function mount()
+
+    public function mount(client $title)
+
     {
-        $this->clients = clients::all();
+
+        $this->title = $title;
     }
+
     public function render()
     {
         return view('livewire.clients');
