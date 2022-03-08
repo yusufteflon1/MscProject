@@ -40,6 +40,7 @@
         </div>
 
         @stack('modals')
+        @yield('content')
 
         @livewireScripts
     </body>

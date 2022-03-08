@@ -2,6 +2,8 @@
 
 use Illuminate\Routing\RouteGroup;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ClientsController;
+use APP\Http\Controllers\ApprovalsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,6 +28,11 @@ use Illuminate\Support\Facades\Route;
 // Route::middleware(['auth:sanctum', 'verified'])->get('/', function () {
 //     return view('welcome');
 // })->name('welcome');
+
+
+// Route::resource('approvals', 'ApprovalsController');
+
+
 
 Route::group(['middleware' => [
     'auth:sanctum',
@@ -53,4 +60,13 @@ Route::group(['middleware' => [
             return view('admin.clients');
         }
     )->name('clients');
+
+    Route::get(
+        '/approvals',
+        function () {
+            return view('approvals');
+        }
+    )->name('approvals');
+
+    Route::get('/client/{id}', [ClientsController::class, 'show']);
 });

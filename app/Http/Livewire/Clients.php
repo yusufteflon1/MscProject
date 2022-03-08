@@ -2,31 +2,19 @@
 
 namespace App\Http\Livewire;
 
-use App\Models\clent;
 use Livewire\Component;
+use App\Models\client;
 
-class Clients extends Component
+class clients extends Component
 {
-    public $modelFormVisible = false;
-    public $first_name;
-    public $last_name;
-    public $phone;
+    public $clients;
 
-    /**
-     * createShowModel showing the form model of the create function
-     *
-     * @return void
-     */
-    public function createShowModal()
+    protected $fillable = [];
+
+    public function mount()
     {
-        $this->modelFormVisible = true;
+        $this->clients = clients::all();
     }
-
-    /**
-     * render function for livewire
-     *
-     * @return void
-     */
     public function render()
     {
         return view('livewire.clients');
