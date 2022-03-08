@@ -7,7 +7,7 @@ w-full h-screen h-screen overflow-hidden relative">
            
             <div class="overflow-auto h-screen pb-24 px-4 md:px-6">
                 <h1 class="text-4xl font-semibold text-orange-600 text-orange-900">
-                    Good afternoon,
+                    Good afternoon {{ $user->name }},
                 </h1>
                 <h2 class="text-md text-orange-600">
                     Here&#x27;s what&#x27;s happening today.

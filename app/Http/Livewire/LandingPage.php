@@ -2,7 +2,7 @@
 
 namespace App\Http\Livewire;
 
-use App\Models\Staff;
+use App\Models\User;
 use Livewire\Component;
 
 class LandingPage extends Component
@@ -15,11 +15,15 @@ class LandingPage extends Component
 
     ];
 
+    public function mount()
+    {
+        $this->user = auth()->user();
+    }
     public function subscribe()
     {
         $this->validate();
 
-        $subscriber = Staff::create([
+        $subscriber = User::create([
             'email' => $this->email,
             'name' => $this->name,
             'password' => $this->password,

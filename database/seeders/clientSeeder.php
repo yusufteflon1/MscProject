@@ -17,9 +17,28 @@ class clientSeeder extends Seeder
     public function run()
     { {
             DB::table('clients')->insert([
-                'title' => 'Second My Product title',
-                'description' => 'second client An awesome product',
-                'clients_id' => '2',
+
+                'last_name' => 'John',
+                'first_name' => 'Doe',
+                'email' => 'John@doe.com',
+                'telephone' => '4344',
+                'education' => 'BSC',
+                'gender' => 'Male',
+                'age_range' => '25-35',
+                'disability' => 'None',
+                'state_of_origin' => 'Abuja',
+                'address' => 'AEA Abuja',
+                'house_condition' => 'Rented',
+                'lga' => 'FCT',
+                'identification' => 'Passport',
+                'id_number' => '123R33',
+                'nationality' => 'Nigerian',
+                'qualification' => 'CAC,FIRS',
+                'staff_id' => '23',
+                'date' => '2020-01-01',
+                'client_id' => '1029',
+                'id_issue_date' => '2021-02-02',
+                'id_expiry' => '2022-02-02'
             ]);
         }
     }
