@@ -8,7 +8,7 @@ use App\Models\User;
 
 class clients extends Component
 {
-
+    public $client;
     public $clients;
     public $first_name;
     public $modalFormVisible = false;
@@ -50,6 +50,7 @@ class clients extends Component
 
     public function render()
     {
+
         return view('livewire.clients');
     }
 }

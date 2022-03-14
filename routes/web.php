@@ -4,6 +4,7 @@ use Illuminate\Routing\RouteGroup;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ClientsController;
 use APP\Http\Controllers\ApprovalsController;
+use App\Http\Livewire\Departments;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,6 +16,8 @@ use APP\Http\Controllers\ApprovalsController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+
 
 
 Route::group(['middleware' => [
@@ -50,6 +53,8 @@ Route::group(['middleware' => [
             return view('approvals');
         }
     )->name('approvals');
+
+    Route::get('/departments', Departments::class);
 
     Route::get('/client/{id}', [ClientsController::class, 'show']);
 });

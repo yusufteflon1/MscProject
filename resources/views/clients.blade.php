@@ -1,23 +1,7 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<x-app-layout>
+  {{-- @livewire('client-approvals', ['clients' => $clients], key($clients->id)) --}}
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <title>client system</title>
-
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-
-    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
-    @livewireStyles
-    
-
-    @livewire('client-approvals', ['clients' => $clients], key($clients->id))
-</head>
-
-<body class="antialiased">
+  <body class="antialiased">
     <div
         class="relative flex justify-center min-h-screen bg-gray-100 items-top dark:bg-gray-700 sm:items-center sm:pt-0">
 
@@ -40,13 +24,13 @@
                                 </div>
                                 <div class="mt-3 mb-1 text-center sm:ml-4 sm:text-left">
                                     <h3 class="pt-1 text-3xl font-black leading-6 text-gray-900" id="modal-headline">
-                                        {{ $clients->title }}
+                                        {{-- {{ $clients->title }} --}}
                                     </h3>
                                 </div>
                             </div>
                         </div>
                         <div class="w-full text-base text-center text-gray-600">
-                            {{ $clients->description }}
+                            {{-- {{ $clients->description }} --}}
                         </div>
 
                         <div
@@ -60,8 +44,4 @@
 
     </div>
     </div>
-    @livewireScripts
-
-</body>
-
-</html>
+</x-app-layout>
