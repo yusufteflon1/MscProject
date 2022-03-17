@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ClientsController;
 use APP\Http\Controllers\ApprovalsController;
 use App\Http\Livewire\Departments;
+use App\Http\Controllers\GoogleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,6 +25,13 @@ Route::group(['middleware' => [
     'auth:sanctum',
     'verified'
 ]], function () {
+
+    Route::get(
+        '/verify',
+        function () {
+            return view('verify');
+        }
+    )->name('verify');
 
 
     Route::get(
@@ -58,3 +66,13 @@ Route::group(['middleware' => [
 
     Route::get('/client/{id}', [ClientsController::class, 'show']);
 });
+
+Route::get(
+    '/auth/google/redirect',
+    [GoogleController::class, 'loginUsingGoogle']
+)->name('loginUsingGoogle');
+
+Route::get(
+    '/auth/google/callback',
+    [GoogleController::class, 'googleCallback']
+)->name('googleCallback');
