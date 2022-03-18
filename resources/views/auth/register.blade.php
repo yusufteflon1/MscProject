@@ -74,5 +74,6 @@
         <x-button>
             <a href="{{route('loginUsingGoogle') }}">Google login</a>
         </x-button>
+        
     </x-jet-authentication-card>
 </x-guest-layout>

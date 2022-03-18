@@ -10,7 +10,6 @@ class clients extends Component
 {
     public $client;
     public $clients;
-    public $first_name;
     public $modalFormVisible = false;
     public $modalConfirmDeleteVisible = false;
     public $modelId;
@@ -51,6 +50,7 @@ class clients extends Component
     public function render()
     {
 
+        $this->clients = client::all();
         return view('livewire.clients');
     }
 }

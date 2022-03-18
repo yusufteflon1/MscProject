@@ -16,18 +16,18 @@ return new class extends Migration
         Schema::create('clients', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->unsignedBigInteger('staff_id');
+            $table->unsignedBigInteger('staff_id')->nullable();
             $table->string('last_name');
             $table->string('first_name');
-            $table->string('email');
-            $table->date('date');
-            $table->integer('telephone');
-            $table->string('education');
+            $table->string('email')->nullable();
+            $table->date('date')->nullable();
+            $table->integer('telephone')->nullable();
+            $table->string('education')->nullable();
             $table->string('gender');
             $table->string('age_range');
             $table->string('disability');
             $table->string('state_of_origin');
-            $table->unsignedBigInteger('client_id');
+            $table->unsignedBigInteger('client_id')->nullable();
             $table->string('address');
             $table->string('house_condition');
             $table->string('lga');
@@ -35,7 +35,7 @@ return new class extends Migration
             $table->string('id_number');
             $table->date('id_issue_date');
             $table->date('id_expiry');
-            $table->string('nationality');
+            $table->string('nationality')->nullable();
             $table->string('qualification');
         });
     }
