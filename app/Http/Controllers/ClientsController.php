@@ -6,6 +6,10 @@ use Illuminate\Http\Request;
 
 class ClientsController extends Controller
 {
+
+
+
+
     public $createShowModal;
 
     public function show($clients_id)

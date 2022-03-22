@@ -18,10 +18,10 @@ class clientSeeder extends Seeder
     { {
             DB::table('clients')->insert([
 
-                'last_name' => 'John',
-                'first_name' => 'Doe',
-                'email' => 'John@doe.com',
-                'telephone' => '4344',
+                'last_name' => 'Benjamin',
+                'first_name' => 'Ekwana',
+                'email' => 'Benjamin@aea.org.ng',
+                'telephone' => '54334400',
                 'education' => 'BSC',
                 'gender' => 'Male',
                 'age_range' => '25-35',

@@ -7,7 +7,7 @@ w-full h-screen h-screen overflow-hidden relative">
            
             <div class="overflow-auto h-screen pb-24 px-4 md:px-6">
                 <h1 class="text-4xl font-semibold text-orange-600 text-orange-900">
-                    Good afternoon {{ $user->name }},
+                    Good afternoon Mr {{ $user->name }},
                 </h1>
                 <h2 class="text-md text-orange-600">
                     Here&#x27;s what&#x27;s happening today.
@@ -30,7 +30,7 @@ w-full h-screen h-screen overflow-hidden relative">
                                             </svg>
                                         </span>
                                         <p class="text-sm text-gray-700 dark:text-white ml-2 font-semibold border-b border-gray-200">
-                                            Level 2 Ambassador
+                                            Approved loans
                                         </p>
                                     </div>
                                     <div class="border-b border-gray-200 mt-6 md:mt-0 text-black dark:text-white font-bold text-xl">
@@ -53,10 +53,10 @@ w-full h-screen h-screen overflow-hidden relative">
                         <div class="w-1/2">
                             <div class="shadow-lg px-4 py-6 w-full bg-white dark:bg-green-900 relative">
                                 <p class="text-2xl text-black dark:text-white font-bold">
-                                    12
+                                    {{ $total_clients}}
                                 </p>
                                 <p class="text-gray-400 text-sm">
-                                    Active projects
+                                    Active clients
                                 </p>
                             </div>
                         </div>
@@ -69,7 +69,7 @@ w-full h-screen h-screen overflow-hidden relative">
                                     $93.76
                                 </p>
                                 <p class="text-gray-400 text-sm">
-                                    Commission in approval
+                                    Recoverd
                                 </p>
                                 <span class="rounded-full absolute p-4 bg-purple-500 top-2 right-4">
                                     <svg width="40" fill="currentColor" height="40" class="text-white h-4 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
@@ -86,17 +86,11 @@ w-full h-screen h-screen overflow-hidden relative">
                 {{-- Select date section here --}}
 
                 <div class="flex items-center space-x-4">
-                    <button class="flex items-center text-gray-400 text-md border-gray-300 border px-4 py-2 rounded-tl-sm rounded-bl-full rounded-r-full">
-                        <svg width="20" height="20" fill="currentColor" class="mr-2 text-gray-400" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M192 1664h288v-288h-288v288zm352 0h320v-288h-320v288zm-352-352h288v-320h-288v320zm352 0h320v-320h-320v320zm-352-384h288v-288h-288v288zm736 736h320v-288h-320v288zm-384-736h320v-288h-320v288zm768 736h288v-288h-288v288zm-384-352h320v-320h-320v320zm-352-864v-288q0-13-9.5-22.5t-22.5-9.5h-64q-13 0-22.5 9.5t-9.5 22.5v288q0 13 9.5 22.5t22.5 9.5h64q13 0 22.5-9.5t9.5-22.5zm736 864h288v-320h-288v320zm-384-384h320v-288h-320v288zm384 0h288v-288h-288v288zm32-480v-288q0-13-9.5-22.5t-22.5-9.5h-64q-13 0-22.5 9.5t-9.5 22.5v288q0 13 9.5 22.5t22.5 9.5h64q13 0 22.5-9.5t9.5-22.5zm384-64v1280q0 52-38 90t-90 38h-1408q-52 0-90-38t-38-90v-1280q0-52 38-90t90-38h128v-96q0-66 47-113t113-47h64q66 0 113 47t47 113v96h384v-96q0-66 47-113t113-47h64q66 0 113 47t47 113v96h128q52 0 90 38t38 90z">
-                            </path>
-                        </svg>
-                        Last month
-                        <svg width="20" height="20" class="ml-2 text-gray-400" fill="currentColor" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M1408 704q0 26-19 45l-448 448q-19 19-45 19t-45-19l-448-448q-19-19-19-45t19-45 45-19h896q26 0 45 19t19 45z">
-                            </path>
-                        </svg>
-                    </button>
+                    <form action="">
+                        <input wire:click="ShowDate" class="flex items-center text-gray-400 text-md border-orange-300 border px-4 py-2 rounded-tl-sm rounded-bl-full rounded-r-full" type="date" wire:model="select_date">
+                    </form>
+                   
+                        
                     <span class="text-sm text-gray-400">
                         Compared to oct 1- otc 30, 2020
                     </span>
@@ -106,7 +100,39 @@ w-full h-screen h-screen overflow-hidden relative">
 
                     {{-- insert all statistics here  --}}
                     <x-box-stat></x-box-stat>
-                    <x-box-stat></x-box-stat>
+                    <x-box-stat2>
+                        @slot('head')
+                            {{ $total_clients}}
+                        @endslot
+
+                        @slot('percentage')
+                            25%
+                        @endslot
+                        
+                        @slot('new_businesses')
+                            10
+                        @endslot
+                        
+                        @slot('perentage_of_new_businesses')
+                            18%
+                        @endslot
+                        
+                        @slot('existing_businesses')
+                            15
+                        @endslot
+                    
+                        @slot('perentage_of_existing_businesses')
+                            26%
+                        @endslot
+                
+                        @slot('visitors')
+                            15
+                        @endslot
+                    
+                        @slot('perentage_of_visitors')
+                            46%
+                        @endslot
+                    </x-box-stat2>
                     <x-box-stat></x-box-stat>
                     <x-box-stat></x-box-stat>
                     <x-box-stat></x-box-stat>
