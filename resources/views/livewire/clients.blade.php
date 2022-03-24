@@ -34,40 +34,6 @@
                             <button type="button" class="bg-red-600 text-gray-200 text-xs rounded hover:bg-red-500 px-4 py-3 focus:outline-none">Reject</button>
                         </td>
                     </tr>
-                
-{{-- 
-                    <tr class="w-full font-light text-gray-700 whitespace-no-wrap border">
-                        <td class="px-4 py-4">2</td>
-                        <td class="px-4 py-4">Taylor Otwel</td>
-                        <td class="px-4 py-4">
-                            <img class="h-6 w-6 rounded-full"
-                                src="{{ asset('images/profile_pictures/zoe.jpg') }}">
-                        </td>
-                        <td class="px-4 py-4">taylow@laravel.com</td>
-                        <td class="px-4 py-4">
-                            <span class="text-sm bg-yellow-500 text-white rounded-full px-2 py-1">Pending</span>
-                        </td>
-                        <td class="text-center py-4">
-                            <button type="button" class="bg-blue-600 text-gray-200 text-xs rounded hover:bg-blue-500 px-4 py-3 focus:outline-none">Approve</button>
-                            <button type="button" class="bg-red-600 text-gray-200 text-xs rounded hover:bg-red-500 px-4 py-3 focus:outline-none">Reject</button>
-                        </td>
-                    </tr>
-                    <tr class="w-full font-light text-gray-700 bg-gray-100 whitespace-no-wrap border">
-                        <td class="px-4 py-4">3</td>
-                        <td class="px-4 py-4">Adam wathan</td>
-                        <td class="px-4 py-4">
-                            <img class="h-6 w-6 rounded-full"
-                                src="{{ asset('images/profile_pictures/jose.jpg') }}">
-                        </td>
-                        <td class="px-4 py-4">tmgbedu@gmail.com</td>
-                        <td class="px-4 py-4">
-                            <span class="text-sm bg-red-500 text-white rounded-full px-2 py-1">Not Active</span>
-                        </td>
-                        <td class="text-center py-4">
-                            <button type="button" class="bg-blue-600 text-gray-200 text-xs rounded hover:bg-blue-500 px-4 py-3 focus:outline-none">Approve</button>
-                            <button type="button" class="bg-red-600 text-gray-200 text-xs rounded hover:bg-red-500 px-4 py-3 focus:outline-none">Reject</button>
-                        </td>
-                    </tr> --}}
                 </tbody>
                 @endforeach
             </table>
