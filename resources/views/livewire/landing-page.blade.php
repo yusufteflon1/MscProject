@@ -106,7 +106,7 @@ w-full h-screen h-screen overflow-hidden relative">
                         @endslot
 
                         @slot('percentage')
-                            25%
+                            
                         @endslot
                         
                         @slot('new_businesses')

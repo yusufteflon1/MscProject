@@ -11,7 +11,6 @@
             </x-slot>
 
             <x-slot name="content">
-        {{-- Test area --}}
 
         <form method="POST" action="{{ route('register') }}">
             @csrf

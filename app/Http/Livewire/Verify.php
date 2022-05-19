@@ -33,6 +33,7 @@ class Verify extends Component
     public $id_issue_date;
     public $id_expiry;
     public $qualification;
+    public $google_id;
 
 
 
@@ -56,13 +57,10 @@ class Verify extends Component
             'id_issue_date' => 'required',
             'id_expiry' => 'required',
             'qualification' => 'required',
+            'google_id' => '',
+            'email' => '',
+
         ]);
-
-
-
-
-
-
 
 
         client::create($data);
@@ -70,11 +68,9 @@ class Verify extends Component
         return redirect()->to('/user/profile');
     }
 
-    // public function mount()
-    // {
-    //     $this->user = auth()->user();
-    // }
-
+    protected $casts = [
+        'google_id' => 'Auth::U',
+    ];
 
     public function createShowModal()
     {

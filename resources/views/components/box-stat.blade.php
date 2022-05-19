@@ -3,7 +3,7 @@
         <p class="text-sm w-max text-gray-700 dark:text-white font-semibold border-b border-gray-200">
             Project Reffered
         </p>
-        <div class="flex items-end space-x-2 my-6">
+        <div class="flex justify-between space-x-2 my-6">
             <p class="text-5xl text-black dark:text-white font-bold">
                 12
             </p>

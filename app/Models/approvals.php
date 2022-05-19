@@ -13,19 +13,20 @@ class approvals extends Model
      *
      * @var array
      */
+
+    protected $primaryKey = "apid";
+    protected $table = "approvals";
+
     protected $guarded = [];
 
-    protected $fillable = [
-        'comment'
-    ];
 
     public function user()
     {
         return $this->belongsTo('App\Models\User');
     }
 
-    public function clients()
-    {
-        return $this->belongsTo('App\Models\clients');
-    }
+    // public function approvalPayments()
+    // {
+    //     return $this->hasMany(payment::class, 'apid', 'apid');
+    // }
 }

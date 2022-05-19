@@ -25,7 +25,9 @@
                       <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-first-name">
                         First Name
                       </label>
-                      <input class="appearance-none block w-full bg-gray-200 text-gray-700 border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="grid-first-name" type="text" placeholder="Jane" wire:model="first_name">
+                      <input class="appearance-none block w-full bg-gray-200 text-gray-700 
+                      border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none 
+                      focus:bg-white" id="grid-first-name" type="text" placeholder="Jane" wire:model="first_name">
                       @error('first_name') <span class="text-danger">{{ $message }}</span> @enderror
                       {{-- <p class="text-red-500 text-xs italic">Please fill out this field.</p> --}}
                     </div>
@@ -33,7 +35,9 @@
                       <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-last-name">
                         Last Name
                       </label>
-                      <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-last-name" type="text" placeholder="Doe" wire:model="last_name">
+                      <input class="appearance-none block w-full bg-gray-200 text-gray-700 
+                      border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none 
+                      focus:bg-white focus:border-gray-500" id="grid-last-name" type="text" placeholder="Doe" wire:model="last_name">
                       @error('last_name') <span class="text-danger">{{ $message }}</span> @enderror
                     </div>
                   </div>
@@ -42,7 +46,9 @@
                       <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-password">
                         Education
                       </label>
-                      <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-password" type="text" placeholder="{{ $user->email }}" wire:model="education">
+                      <input class="appearance-none block w-full bg-gray-200 text-gray-700 
+                      border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none
+                      focus:bg-white focus:border-gray-500" id="grid-password" type="text" placeholder="education" wire:model="education">
                       @error('client_id') <span class="text-danger">{{ $message }}</span> @enderror
                       <p class="text-gray-600 text-xs italic">Check your email for ID details </p>
                     </div>
@@ -54,7 +60,9 @@
                       <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-phone">
                         Phone Number
                       </label>
-                      <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-phone" type="text" placeholder="08098818001" wire:model="telephone">
+                      <input class="appearance-none block w-full bg-gray-200 text-gray-700 
+                      border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none 
+                      focus:bg-white focus:border-gray-500" id="grid-phone" type="text" placeholder="08098818001" wire:model="telephone">
                       @error('telephone') <span class="text-danger">{{ $message }}</span> @enderror
                     </div>
                     <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
@@ -62,7 +70,9 @@
                         Gender
                       </label>
                       <div class="relative">
-                        <select class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-gender" wire:model="gender">
+                        <select class="block appearance-none w-full bg-gray-200 border border-gray-200 
+                        text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none 
+                        focus:bg-white focus:border-gray-500" id="grid-gender" wire:model="gender">
                           <option>Male</option>
                           <option>Female</option>
                         </select>
@@ -76,11 +86,15 @@
                             Age Range
                           </label>
                           <div class="relative">
-                            <select class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-age" wire:model="age_range">
-                              <option>18 - 28</option>
-                              <option>29 - 39</option>
-                              <option>40 - 50</option>
-                              <option>Over 51</option>
+                            <select class="block appearance-none w-full bg-gray-200 border 
+                            border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight 
+                            focus:outline-none focus:bg-white focus:border-gray-500" id="grid-age" wire:model="age_range">
+                              <option value= "0" >Bellow 20</option>
+                              <option value= "1" >21 - 25</option>
+                              <option value= "2" >26 - 30</option>
+                              <option value= "2" >31 - 40</option>
+                              <option value= "2">41 - 59</option>
+                              <option value= "0" >Over 51</option>
                             </select>
                             @error('age_range') <span class="text-danger">{{ $message }}</span> @enderror
                             <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
@@ -91,9 +105,11 @@
                   <div class="flex flex-wrap -mx-3 mb-2">
                     <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
                       <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-city">
-                        City
+                        Disability
                       </label>
-                      <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-city" type="text" placeholder="Albuquerque" wire:model="disability">
+                      <input class="appearance-none block w-full bg-gray-200 text-gray-700 
+                      border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none 
+                      focus:bg-white focus:border-gray-500" id="grid-city" type="text" placeholder="Disability" wire:model="disability">
                       @error('disability') <span class="text-danger">{{ $message }}</span> @enderror
                     </div>
                     <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
@@ -101,10 +117,12 @@
                         State
                       </label>
                       <div class="relative">
-                        <select class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state" wire:model="state_of_origin">
-                          <option>New Mexico</option>
-                          <option>Missouri</option>
-                          <option>Texas</option>
+                        <select class="block appearance-none w-full bg-gray-200 border border-gray-200
+                         text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none 
+                         focus:bg-white focus:border-gray-500" id="grid-state" wire:model="state_of_origin">
+                          <option>FCT</option>
+                          <option>Lagos</option>
+                          <option>Kano</option>
                         </select>
                         @error('state_of_origin') <span class="text-danger">{{ $message }}</span> @enderror
                         <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
@@ -113,32 +131,52 @@
                     </div>
                     <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
                       <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-zip">
-                        Zip
+                        House condition
                       </label>
-                      <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-zip" type="text" placeholder="90210" wire:model="house_condition">
+                      <div class="relative">
+                        <select class="block appearance-none w-full bg-gray-200 border border-gray-200
+                         text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none 
+                         focus:bg-white focus:border-gray-500" id="grid-house" wire:model="house_condition">
+                          <option value="1">Owner</option>
+                          <option value="0">Rented</option>
+                        </select>
                       @error('house_condition') <span class="text-danger">{{ $message }}</span> @enderror
                     </div>
                   </div>
-                  <div class="flex flex-wrap -mx-3 mb-6">
+                  <div class="flex flex-wrap -mx-3 mb-6 py-3">
                     <div class="w-full px-3">
                       <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-address">
                         Address
                       </label>
-                      <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-address" type="text" placeholder="GF 07 AEA Complex Abuja" wire:model="address">
+                      <input class="appearance-none block w-full bg-gray-200 text-gray-700 
+                      border border-gray-200 rounded py-3 px-4 mb-3 leading-tight 
+                      focus:outline-none focus:bg-white focus:border-gray-500" id="grid-address" type="text" 
+                      placeholder="GF 07 AEA Complex Abuja" wire:model="address">
                       @error('address') <span class="text-danger">{{ $message }}</span> @enderror
                     </div>
                   </div>
-    
+                  
+
+                      <input type="hidden" 
+                      value="{{$user->google_id }}" wire:model="google_id">
+                      
+
+                      <input type="hidden" 
+                      value="test@email.com" wire:model="email">
+                      
 
 
 
-{{-- 
+                  
+
                   <div class="flex flex-wrap -mx-3 mb-2">
                     <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
                       <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-lga">
                         Local Govenment
                       </label>
-                      <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-lga" type="text" placeholder="AMAC" wire:model="lga">
+                      <input class="appearance-none block w-full bg-gray-200 
+                      text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight 
+                      focus:outline-none focus:bg-white focus:border-gray-500" id="grid-lga" type="text" placeholder="AMAC" wire:model="lga">
                       @error('lga') <span class="text-danger">{{ $message }}</span> @enderror
                     </div>
                     <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
@@ -146,7 +184,9 @@
                         ID type 
                       </label>
                       <div class="relative">
-                        <select class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-id" wire:model="identification">
+                        <select class="block appearance-none w-full bg-gray-200 border
+                         border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none 
+                         focus:bg-white focus:border-gray-500" id="grid-id" wire:model="identification">
                           <option>National ID</option>
                           <option>Drivers Licence</option>
                           <option>Int Passport</option>
@@ -161,62 +201,20 @@
                       <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-id">
                         ID Number
                       </label>
-                      <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-id" type="text" placeholder="AO90210"wire:model="id_number">
-                      @error('id_number') <span class="text-danger">{{ $message }}</span> @enderror
-                    </div>
-                  </div> --}}
-
-
-
-
-
-
-
-
-
-
-    
-                  <div class="flex flex-wrap -mx-3 mb-2">
-                    <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
-                      <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-lga">
-                        Local Govenment
-                      </label>
-                      <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-lga" type="text" placeholder="AMAC" wire:model="lga">
-                      @error('lga') <span class="text-danger">{{ $message }}</span> @enderror
-                    </div>
-                    <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
-                      <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-id">
-                        ID type 
-                      </label>
-                      <div class="relative">
-                        <select class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-id" wire:model="identification">
-                          <option>National ID</option>
-                          <option>Drivers Licence</option>
-                          <option>Int Passport</option>
-                          <option>Other</option>
-                        </select>
-                        @error('identification') <span class="text-danger">{{ $message }}</span> @enderror
-                        <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-                        </div>
-                      </div>
-                    </div>
-                    <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
-                      <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-id">
-                        ID Number
-                      </label>
-                      <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-id" type="text" placeholder="AO90210"wire:model="id_number">
+                      <input class="appearance-none block w-full bg-gray-200 text-gray-700 border
+                       border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white
+                        focus:border-gray-500" id="grid-id" type="text" placeholder="AO90210"wire:model="id_number">
                       @error('id_number') <span class="text-danger">{{ $message }}</span> @enderror
                     </div>
                   </div>
-
-    
-    
                   <div class="flex flex-wrap -mx-3 mb-2">
                     <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
                       <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-lga">
                         ID Issue Date
                       </label>
-                      <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-lga" type="date" placeholder="" wire:model="id_issue_date">
+                      <input class="appearance-none block w-full bg-gray-200 text-gray-700 border
+                       border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white 
+                       focus:border-gray-500" id="grid-lga" type="date" placeholder="" wire:model="id_issue_date">
                       @error('id_issue_date') <span class="text-danger">{{ $message }}</span> @enderror
                     </div>
                     <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">

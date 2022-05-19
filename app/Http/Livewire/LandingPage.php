@@ -14,7 +14,7 @@ class LandingPage extends Component
     public $openDate = false;
     public $select_date;
     public $date;
-
+    public $increse_percentage;
     // protected $rules = [
     //     'email' => 'required|email:filter|unique:Staff,email',
 
@@ -38,6 +38,19 @@ class LandingPage extends Component
         // }
         // client::create($data);
     }
+
+    // public function perc(Request $request)
+    // {
+    //     $client = client::where('created_at', '>=', $request->start_date)
+
+    //         ->where('created_at', '<=', $request->end_date)
+
+    //         ->get();
+
+
+    //     dd($client);
+    // }
+
     public function mount()
     {
         $this->user = auth()->user();

@@ -18,27 +18,28 @@ class clientSeeder extends Seeder
     { {
             DB::table('clients')->insert([
 
-                'last_name' => 'Benjamin',
-                'first_name' => 'Ekwana',
-                'email' => 'Benjamin@aea.org.ng',
-                'telephone' => '54334400',
+                'last_name' => 'Amano',
+                'first_name' => 'Joel',
+                'email' => 'Aano@aea.org.ng',
+                'telephone' => '662758',
                 'education' => 'BSC',
                 'gender' => 'Male',
                 'age_range' => '25-35',
                 'disability' => 'None',
-                'state_of_origin' => 'Abuja',
+                'state_of_origin' => 'Yola',
                 'address' => 'AEA Abuja',
                 'house_condition' => 'Rented',
                 'lga' => 'FCT',
                 'identification' => 'Passport',
-                'id_number' => '123R33',
+                'id_number' => '126R33',
                 'nationality' => 'Nigerian',
                 'qualification' => 'CAC,FIRS',
                 'staff_id' => '23',
                 'date' => '2020-01-01',
-                'client_id' => '1029',
-                'id_issue_date' => '2021-02-02',
-                'id_expiry' => '2022-02-02'
+                'client_id' => '4',
+                'id_issue_date' => '2020-02-02',
+                'verified' => '1',
+                'id_expiry' => '2025-02-02'
             ]);
         }
     }

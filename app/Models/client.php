@@ -33,6 +33,7 @@ class client extends Model
     ];
 
 
+
     public function approvals()
     {
         return $this->hasMany('App\Models\approvals');

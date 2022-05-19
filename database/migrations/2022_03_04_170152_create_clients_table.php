@@ -37,6 +37,7 @@ return new class extends Migration
             $table->date('id_expiry');
             $table->string('nationality')->nullable();
             $table->string('qualification');
+            $table->string('google_id')->nullable();
         });
     }
 
